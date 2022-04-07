@@ -1,21 +1,30 @@
 <template>
 <div id="app">
   <div class="header">
-    <router-link to="/">
-      <div class="logo">
-        <img src="/ordinary.png">
-      </div>
+    <router-link to="/" class="router-link-style">
+      <div class="title">
+      <h1>LiftYou</h1>
+    </div>
     </router-link>
-    <div class="title">
-      <h1>Museum of Ordinary Objects</h1>
+    <div class="router-link-holder">
+      <router-link to="/Home" class="router-link-style">
+        Share Your Experience
+      </router-link>
+      <p>&nbsp;|&nbsp;</p>
+      <router-link to="/Share" class="router-link-style">
+        Lift Others
+      </router-link>
+      <p>&nbsp;|&nbsp;</p>
+      <router-link to="/AI" class="router-link-style">
+        Meet Your AI Psychologist
+      </router-link>
     </div>
   </div>
   <div class="content">
     <router-view />
   </div>
   <div class="footer">
-    <router-link to="/home">Home</router-link>
-    <router-link to="/admin">Admin</router-link>
+    <a href="https://github.com/brightlightkim/liftyou">GitHub Link</a> 
   </div>
 </div>
 </template>
@@ -33,16 +42,24 @@ body {
   margin: 0px;
 }
 
+.router-link-holder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.router-link-style {
+  color: white;
+  text-decoration: none;
+}
+
 /* Header */
 .header {
   display: flex;
-  padding: 10px 100px 0px 100px;
+  justify-content: space-between;
+  padding: 0px 100px 0px 100px;
   background-color: #f45656;
   color: white;
-}
-
-.title {
-  margin-top: 5px;
 }
 
 .title h1 {
@@ -53,16 +70,21 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px 100px;
+  padding: 0px 100px;
   min-height: 500px;
 }
 
 /* Footer */
 .footer {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 50px;
-  padding: 20px 100px 0px 100px;
-  background: #e3e3e3;
-  font-size: 12px;
+  background: white;
+  font-size: 20px;
 }
 
 .footer a {

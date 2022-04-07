@@ -1,12 +1,32 @@
 <template>
   <div class="home">
     <section class="image-gallery">
+      <div class="image">
+        <img
+          src="https://media-exp1.licdn.com/dms/image/C5603AQGKeSgyvA5s3Q/profile-displayphoto-shrink_400_400/0/1517878491032?e=1654732800&v=beta&t=G6AH6Co0OLMUPZNBitz2k-DbS6P3DJRkOcPMsKBYCRU"
+          alt
+        />
+        <div class="text">
+          <h3>Sample</h3>
+          <p>Text</p>
+        </div>
+      </div>
+      <div class="image">
+        <img
+          src="https://media-exp1.licdn.com/dms/image/C5603AQGKeSgyvA5s3Q/profile-displayphoto-shrink_400_400/0/1517878491032?e=1654732800&v=beta&t=G6AH6Co0OLMUPZNBitz2k-DbS6P3DJRkOcPMsKBYCRU"
+          alt
+        />
+        <div class="text">
+          <h3>Sample</h3>
+          <p>Text</p>
+        </div>
+      </div>
       <div class="image" v-for="item in items" :key="item.id">
+        <img :src="item.path" />
         <h2>{{ item.title }}</h2>
         <p>{{ item.description }}</p>
-        <img :src="item.path" />
       </div>
-    </section>    
+    </section>
   </div>
 </template>
 
@@ -22,8 +42,9 @@ export default {
   },
   created() {
     this.getItems();
+
   },
-  methods: {
+  methods: {    
     async getItems() {//GetItems do not work..
       try {
         console.log("get items");
@@ -43,11 +64,6 @@ export default {
 </script>
 
 <style scoped>
-.image h2 {
-  font-style: italic;
-}
-
-/* Masonry */
 *,
 *:before,
 *:after {
@@ -55,37 +71,44 @@ export default {
 }
 
 .image-gallery {
-  column-gap: 1.5em;
+  width: 1000px;
+}
+
+.image-gallery div {
+  margin-top: 2em;
 }
 
 .image {
-  margin: 0 0 1.5em;
-  display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
   width: 100%;
+  border-radius: 20px;
 }
 
 .image img {
-  width: 100%;
+  flex: 1;
+  border-radius: 20px 0px 0px 20px;
 }
 
-/* Masonry on large screens */
-@media only screen and (min-width: 1024px) {
-  .image-gallery {
-    column-count: 4;
-  }
+.text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 0 0 2em;
+  column-gap: 1em;
 }
 
-/* Masonry on medium-sized screens */
-@media only screen and (max-width: 1023px) and (min-width: 768px) {
-  .image-gallery {
-    column-count: 3;
-  }
+.text h3 {
+  width: 90%;
 }
 
-/* Masonry on small screens */
-@media only screen and (max-width: 767px) and (min-width: 540px) {
-  .image-gallery {
-    column-count: 2;
-  }
+.text p {
+  height: 200px;
+  width: 90%;
+  overflow-y: hidden;
 }
+
 </style>

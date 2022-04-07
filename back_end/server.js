@@ -9,7 +9,7 @@ app.use(bodyParser.urlencoded({
 
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb+srv://k2289:1234@cluster.krjfa.mongodb.net/museum?retryWrites=true&w=majority', {
+mongoose.connect('mongodb+srv://k2289:1234@cluster.krjfa.mongodb.net/lift?retryWrites=true&w=majority', {
   useNewUrlParser: true
 });
 
