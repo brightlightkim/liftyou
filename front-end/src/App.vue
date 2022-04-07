@@ -7,11 +7,11 @@
     </div>
     </router-link>
     <div class="router-link-holder">
-      <router-link to="/Home" class="router-link-style">
+      <router-link to="/upload" class="router-link-style">
         Share Your Experience
       </router-link>
       <p>&nbsp;|&nbsp;</p>
-      <router-link to="/Share" class="router-link-style">
+      <router-link to="/home" class="router-link-style">
         Lift Others
       </router-link>
       <p>&nbsp;|&nbsp;</p>

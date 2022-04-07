@@ -1,15 +1,15 @@
 <template>
-  <div class="admin">
-    <h1>The Admin Page!</h1>
+  <div class="Upload">
+    <h1>Share Your Experience to Lift Others!</h1>
     <div class="heading">
       <div class="circle">1</div>
-      <h2>Add an Item</h2>
+      <h2>Add Your Experience</h2>
     </div>
     <div class="add">
       <div class="form">
-        <input v-model="title" placeholder="Title" />
+        <input class="title" v-model="title" placeholder="Title" />
         <p></p>
-        <textarea v-model="description" placeholder="Description" />
+        <textarea class="textArea" v-model="description" placeholder="Description" />
         <p></p>
         <input type="file" name="photo" @change="fileChanged" />
         <button @click="upload">Upload</button>
@@ -22,7 +22,7 @@
     </div>
     <div class="heading">
       <div class="circle">2</div>
-      <h2>Edit/Delete an Item</h2>
+      <h2>Edit/Delete Your Experience</h2>
     </div>
     <div class="edit">
       <div class="form">
@@ -55,7 +55,7 @@
 import axios from 'axios';
 
 export default {
-  name: 'Admin',
+  name: 'Upload',
   data() {
     return {
       title: "",
@@ -136,6 +136,15 @@ export default {
 </script>
 
 <style scoped>
+
+.title {
+  width: 40%;
+}
+
+.textArea {
+  width: 50%;
+}
+
 .image h2 {
   font-style: italic;
   font-size: 1em;

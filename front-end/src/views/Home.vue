@@ -77,17 +77,12 @@ export default {
   },
   created() {
     this.getItems();
-
   },
   methods: {
-    async getItems() {//GetItems do not work..
+    async getItems() {
       try {
         console.log("get items");
-        //Do you think that I have to change something here?
         let response = await axios.get("/api/items");
-
-        console.log(response.data);
-
         this.items = response.data;
         return true;
       } catch (error) {
