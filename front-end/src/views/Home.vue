@@ -84,7 +84,6 @@ export default {
   methods: {
     async getItems() {
       try {
-        console.log("get items");
         let response = await axios.get("/api/items");
         this.items = response.data;
         return true;
