@@ -7,9 +7,9 @@
     </div>
     <div class="add">
       <div class="form">
-        <input class="title" v-model="title" placeholder="Title" />
+        <input v-model="title" placeholder="Title" />
         <p></p>
-        <textarea class="textArea" v-model="description" placeholder="Description" />
+        <textarea v-model="description" placeholder="Description" />
         <p></p>
         <input type="file" name="photo" @change="fileChanged" />
         <button @click="upload">Upload</button>
@@ -137,12 +137,20 @@ export default {
 
 <style scoped>
 
-.title {
-  width: 40%;
+input {
+  width: 100%;
 }
 
-.textArea {
-  width: 50%;
+input:focus {
+  border: 3px solid #555;
+}
+
+textarea {
+  width: 100%;
+}
+
+textarea:focus {
+  border: 3px solid #555;
 }
 
 .image h2 {

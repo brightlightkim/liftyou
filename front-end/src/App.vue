@@ -1,33 +1,27 @@
 <template>
-<div id="app">
-  <div class="header">
-    <router-link to="/" class="router-link-style">
-      <div class="title">
-      <h1>LiftYou</h1>
+  <div id="app">
+    <div class="header">
+      <router-link to="/" class="router-link-style">
+        <div class="title">
+          <h1>LiftYou</h1>
+        </div>
+      </router-link>
+      <div class="router-link-holder">
+        <router-link to="/about" class="router-link-style">About</router-link>
+        <p>&nbsp;|&nbsp;</p>
+        <router-link to="/upload" class="router-link-style">Share Your Experience</router-link>
+        <p>&nbsp;|&nbsp;</p>
+        <router-link to="/home" class="router-link-style">Lift Others</router-link>
+      </div>
     </div>
-    </router-link>
-    <div class="router-link-holder">
-      <router-link to="/upload" class="router-link-style">
-        Share Your Experience
-      </router-link>
-      <p>&nbsp;|&nbsp;</p>
-      <router-link to="/home" class="router-link-style">
-        Lift Others
-      </router-link>
-      <p>&nbsp;|&nbsp;</p>
-      <router-link to="/AI" class="router-link-style">
-        Meet Your AI Psychologist
-      </router-link>
+    <div class="content">
+      <router-view />
+    </div>
+    <div class="bottomPadding"></div>
+    <div class="footer">
+      <a href="https://github.com/brightlightkim/liftyou">GitHub Link</a>
     </div>
   </div>
-  <div class="content">
-    <router-view />
-  </div>
-  <div class="bottomPadding"></div>
-  <div class="footer">
-    <a href="https://github.com/brightlightkim/liftyou">GitHub Link</a> 
-  </div>
-</div>
 </template>
 
 <style>
@@ -36,7 +30,7 @@ html {
 }
 
 body {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 16px;
   background: #fce0e0;
   padding: 0px;

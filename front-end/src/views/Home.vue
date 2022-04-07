@@ -1,6 +1,14 @@
 <template>
   <div class="home">
     <section class="image-gallery">
+      <div class="image" v-for="item in items" :key="item.id">
+        <img :src="item.path" />
+        <div class="text">
+          <h3>{{ item.title }}</h3>
+          <p>{{ item.description }}</p>
+        </div>
+      </div>
+      <!--
       <div class="image">
         <img
           src="https://media-exp1.licdn.com/dms/image/C5603AQGKeSgyvA5s3Q/profile-displayphoto-shrink_400_400/0/1517878491032?e=1654732800&v=beta&t=G6AH6Co0OLMUPZNBitz2k-DbS6P3DJRkOcPMsKBYCRU"
@@ -8,37 +16,37 @@
         />
         <div class="text">
           <h3>Sample</h3>
-          <p>
-            Textaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaas;
-            dlkjsd;agkjsd;agkjsad;gkjsd;agkjsad;gkjsad;gkjsda;gksladjg;sdjkg;skdajg;
-            ;saldkgj;lsdkjg;lsadjg;lksdajg;lksdjg;lskadjg;lsdkajg;sldakjg;lsdajg;lsdakjg
-            ;lsdajgl;asdjg;lsdja;gljsad;lgkjasd;lgjks;daljkg;sadlkgj;lsadkjg;lksdajg;sadkljg;
-            sdlakgj;lsadjg;lskdjag;lasdjg;kljsad;lgjs;dlajg;lsdaj;gljsdal;kgjl;asdjg;klsdjakl;g
-            jksda;ljgl;ksdajg;lskadj;gljsad;ljg;lasdkjg;sdlkjg;asjg;lasdkjg;lkasdj;glkj
-            asdfasdfas
-            asdfsadfsad
-            asdfsadfsadasdfsad
-            asdfsadasdfasdfsdafasdfsadfsdafsdafasdfsadfsdafsdafsadfsadfsdafsdafsadfsdafsdafsadfsdafsdafsdfsdafasdfsdafsdafsda
-          </p>
+          <p>Texta</p>
           <div class="commentContainer">
-
             <div class="comment">
-              <img src="https://www.seekpng.com/png/detail/46-462910_person-icon-black-avatar-png.png" alt="">
+              <img
+                src="https://www.seekpng.com/png/detail/46-462910_person-icon-black-avatar-png.png"
+                alt
+              />
               <p>Username: Comment</p>
             </div>
           </div>
-          <hr>
+          <hr />
           <div class="summaryBar">
             <div class="summary">
-              <img src="https://icones.pro/wp-content/uploads/2021/04/icone-noire-noir.png" alt="">
-              <img src="https://cdn2.iconfinder.com/data/icons/medical-healthcare-26/28/Chat-2-512.png" alt="">
-              <img src="https://www.pikpng.com/pngl/b/78-782135_share-png-share-icon-free-download-clipart.png" alt="">
+              <img src="https://icones.pro/wp-content/uploads/2021/04/icone-noire-noir.png" alt />
+              <img
+                src="https://cdn2.iconfinder.com/data/icons/medical-healthcare-26/28/Chat-2-512.png"
+                alt
+              />
+              <img
+                src="https://www.pikpng.com/pngl/b/78-782135_share-png-share-icon-free-download-clipart.png"
+                alt
+              />
             </div>
             <div class="bookmark">
-              <img src="https://cdn.iconscout.com/icon/free/png-256/bookmark-1773018-1508960.png" alt="">
-            </div>            
+              <img
+                src="https://cdn.iconscout.com/icon/free/png-256/bookmark-1773018-1508960.png"
+                alt
+              />
+            </div>
           </div>
-          <hr>
+          <hr />
           <div class="navigationBar">
             <div class="upliftButton">Uplift</div>
             <div class="commentButton">Comment</div>
@@ -55,12 +63,7 @@
           <h3>Sample</h3>
           <p>Text</p>
         </div>
-      </div>
-      <div class="image" v-for="item in items" :key="item.id">
-        <img :src="item.path" />
-        <h2>{{ item.title }}</h2>
-        <p>{{ item.description }}</p>
-      </div>
+      </div>-->
     </section>
   </div>
 </template>
@@ -147,7 +150,8 @@ hr {
   margin: none;
 }
 
-.navigationBar, .summaryBar {
+.navigationBar,
+.summaryBar {
   display: flex;
   align-items: center;
   width: 100%;
@@ -171,14 +175,15 @@ hr {
   height: 20px;
 }
 
-.bookmark{
+.bookmark {
   padding-right: 25px;
   display: flex;
   justify-content: right;
   height: 20px;
 }
 
-.summary img, .bookmark img {
+.summary img,
+.bookmark img {
   height: 20px;
   margin-left: 5px;
 }
@@ -199,7 +204,7 @@ hr {
   color: darkslategray;
 }
 
-.commentContainer{
+.commentContainer {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -218,13 +223,13 @@ hr {
   border-radius: 15px;
 }
 
-.comment img{
+.comment img {
   height: 30px;
   border-radius: 15px;
   background-color: #f9a1a1;
 }
 
-.comment p{
+.comment p {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -233,5 +238,4 @@ hr {
   border-radius: 15px;
   background-color: #f9a1a1;
 }
-
 </style>
