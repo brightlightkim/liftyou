@@ -8,7 +8,42 @@
         />
         <div class="text">
           <h3>Sample</h3>
-          <p>Text</p>
+          <p>
+            Textaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaas;
+            dlkjsd;agkjsd;agkjsad;gkjsd;agkjsad;gkjsad;gkjsda;gksladjg;sdjkg;skdajg;
+            ;saldkgj;lsdkjg;lsadjg;lksdajg;lksdjg;lskadjg;lsdkajg;sldakjg;lsdajg;lsdakjg
+            ;lsdajgl;asdjg;lsdja;gljsad;lgkjasd;lgjks;daljkg;sadlkgj;lsadkjg;lksdajg;sadkljg;
+            sdlakgj;lsadjg;lskdjag;lasdjg;kljsad;lgjs;dlajg;lsdaj;gljsdal;kgjl;asdjg;klsdjakl;g
+            jksda;ljgl;ksdajg;lskadj;gljsad;ljg;lasdkjg;sdlkjg;asjg;lasdkjg;lkasdj;glkj
+            asdfasdfas
+            asdfsadfsad
+            asdfsadfsadasdfsad
+            asdfsadasdfasdfsdafasdfsadfsdafsdafasdfsadfsdafsdafsadfsadfsdafsdafsadfsdafsdafsadfsdafsdafsdfsdafasdfsdafsdafsda
+          </p>
+          <div class="commentContainer">
+
+            <div class="comment">
+              <img src="https://www.seekpng.com/png/detail/46-462910_person-icon-black-avatar-png.png" alt="">
+              <p>Username: Comment</p>
+            </div>
+          </div>
+          <hr>
+          <div class="summaryBar">
+            <div class="summary">
+              <img src="https://icones.pro/wp-content/uploads/2021/04/icone-noire-noir.png" alt="">
+              <img src="https://cdn2.iconfinder.com/data/icons/medical-healthcare-26/28/Chat-2-512.png" alt="">
+              <img src="https://www.pikpng.com/pngl/b/78-782135_share-png-share-icon-free-download-clipart.png" alt="">
+            </div>
+            <div class="bookmark">
+              <img src="https://cdn.iconscout.com/icon/free/png-256/bookmark-1773018-1508960.png" alt="">
+            </div>            
+          </div>
+          <hr>
+          <div class="navigationBar">
+            <div class="upliftButton">Uplift</div>
+            <div class="commentButton">Comment</div>
+            <div class="shareButton">Share</div>
+          </div>
         </div>
       </div>
       <div class="image">
@@ -44,7 +79,7 @@ export default {
     this.getItems();
 
   },
-  methods: {    
+  methods: {
     async getItems() {//GetItems do not work..
       try {
         console.log("get items");
@@ -74,8 +109,8 @@ export default {
   width: 1000px;
 }
 
-.image-gallery div {
-  margin-top: 2em;
+hr {
+  border-top: 1px solid #f45656;
 }
 
 .image {
@@ -84,6 +119,7 @@ export default {
   align-items: center;
   background-color: white;
   width: 100%;
+  margin-top: 2em;
   border-radius: 20px;
 }
 
@@ -97,8 +133,6 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0 0 0 2em;
-  column-gap: 1em;
 }
 
 .text h3 {
@@ -106,9 +140,103 @@ export default {
 }
 
 .text p {
-  height: 200px;
+  height: 150px;
   width: 90%;
-  overflow-y: hidden;
+  white-space: normal;
+  word-break: break-all;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.text div {
+  margin: none;
+}
+
+.navigationBar, .summaryBar {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.navigationBar {
+  justify-content: space-around;
+  height: 30px;
+}
+
+.summaryBar {
+  justify-content: space-between;
+  height: 20px;
+  margin-bottom: 3px;
+}
+
+.summary {
+  padding-left: 25px;
+  display: flex;
+  justify-content: left;
+  height: 20px;
+}
+
+.bookmark{
+  padding-right: 25px;
+  display: flex;
+  justify-content: right;
+  height: 20px;
+}
+
+.summary img, .bookmark img {
+  height: 20px;
+  margin-left: 5px;
+}
+
+.upliftButton,
+.commentButton,
+.shareButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.upliftButton:hover,
+.commentButton:hover,
+.shareButton:hover {
+  color: darkslategray;
+}
+
+.commentContainer{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  width: 90%;
+  height: 150px;
+  overflow-y: scroll;
+}
+
+.comment {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  height: 30px;
+  border-radius: 15px;
+}
+
+.comment img{
+  height: 30px;
+  border-radius: 15px;
+  background-color: #f9a1a1;
+}
+
+.comment p{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 30px;
+  border-radius: 15px;
+  background-color: #f9a1a1;
 }
 
 </style>

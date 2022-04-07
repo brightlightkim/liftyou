@@ -23,6 +23,7 @@
   <div class="content">
     <router-view />
   </div>
+  <div class="bottomPadding"></div>
   <div class="footer">
     <a href="https://github.com/brightlightkim/liftyou">GitHub Link</a> 
   </div>
@@ -72,6 +73,10 @@ body {
   align-items: center;
   padding: 0px 100px;
   min-height: 500px;
+}
+
+.bottomPadding {
+  height: 50px;
 }
 
 /* Footer */
