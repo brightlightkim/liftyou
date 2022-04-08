@@ -6,64 +6,49 @@
         <div class="text">
           <h3>{{ item.title }}</h3>
           <p>{{ item.description }}</p>
-        </div>
-      </div>
-      <!--
-      <div class="image">
-        <img
-          src="https://media-exp1.licdn.com/dms/image/C5603AQGKeSgyvA5s3Q/profile-displayphoto-shrink_400_400/0/1517878491032?e=1654732800&v=beta&t=G6AH6Co0OLMUPZNBitz2k-DbS6P3DJRkOcPMsKBYCRU"
-          alt
-        />
-        <div class="text">
-          <h3>Sample</h3>
-          <p>Texta</p>
           <div class="commentContainer">
             <div class="comment">
-              <img
-                src="https://www.seekpng.com/png/detail/46-462910_person-icon-black-avatar-png.png"
-                alt
-              />
-              <p>Username: Comment</p>
+              <img src="../../public/images/person.png" alt="">
+              <span>Hi</span>
+              <img class="clickable" src="../../public/images/like.png" alt="">
+              <h4>1</h4>
+            </div>
+            <div class="comment">
+              <img src="../../public/images/person.png" alt="">
+              <span>Hi</span>
+              <img class="clickable" src="../../public/images/like.png" alt="">
+              <h4>1</h4>
+            </div>
+            <div class="comment">
+              <img src="../../public/images/person.png" alt="">
+              <span>Hi</span>
+              <img class="clickable" src="../../public/images/like.png" alt="">
+              <h4>1</h4>
             </div>
           </div>
-          <hr />
           <div class="summaryBar">
             <div class="summary">
-              <img src="https://icones.pro/wp-content/uploads/2021/04/icone-noire-noir.png" alt />
-              <img
-                src="https://cdn2.iconfinder.com/data/icons/medical-healthcare-26/28/Chat-2-512.png"
-                alt
-              />
-              <img
-                src="https://www.pikpng.com/pngl/b/78-782135_share-png-share-icon-free-download-clipart.png"
-                alt
-              />
+              <img src="../../public/images/like.png" alt />
+              <img src="../../public/images/comment.png" alt />
+              <img src="../../public/images/share.png" alt />
             </div>
             <div class="bookmark">
-              <img
-                src="https://cdn.iconscout.com/icon/free/png-256/bookmark-1773018-1508960.png"
-                alt
-              />
+              <img src="../../public/images/bookmark_not_selected.png" alt />
             </div>
           </div>
-          <hr />
           <div class="navigationBar">
             <div class="upliftButton">Uplift</div>
             <div class="commentButton">Comment</div>
             <div class="shareButton">Share</div>
           </div>
+          <div class="commentHolder">
+            <div class="inputHolder">
+              <input type="text" placeholder="comment to uplift" />
+            </div>
+            <div class="submitButton">Submit</div>
+          </div>
         </div>
       </div>
-      <div class="image">
-        <img
-          src="https://media-exp1.licdn.com/dms/image/C5603AQGKeSgyvA5s3Q/profile-displayphoto-shrink_400_400/0/1517878491032?e=1654732800&v=beta&t=G6AH6Co0OLMUPZNBitz2k-DbS6P3DJRkOcPMsKBYCRU"
-          alt
-        />
-        <div class="text">
-          <h3>Sample</h3>
-          <p>Text</p>
-        </div>
-      </div>-->
     </section>
   </div>
 </template>
@@ -110,6 +95,52 @@ hr {
   border-top: 1px solid #f45656;
 }
 
+.commentHolder {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.submitButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 19%;
+  height: 38px;
+  border-radius: 19px;
+  margin-left: 3px;
+  color: white;
+  background-color: black;
+  cursor: pointer;
+}
+
+.submitButton:hover {
+  background-color: rgb(59, 59, 59);
+}
+
+.inputHolder {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  width: 80%;
+  height: 38px;
+  border-radius: 19px;
+  border: 2px solid black;
+}
+
+input {
+  margin-left: 10px;
+  width: 90%;
+  height: 30px;
+  border: white;
+}
+
+input:focus {
+  outline: none;
+}
+
 .image {
   display: flex;
   justify-content: center;
@@ -121,12 +152,12 @@ hr {
 }
 
 .image img {
-  flex: 1;
+  width: 500px;
   border-radius: 20px 0px 0px 20px;
 }
 
 .text {
-  flex: 1;
+  width: 500px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -149,21 +180,21 @@ hr {
   margin: none;
 }
 
-.navigationBar,
-.summaryBar {
+.navigationBar {
   display: flex;
   align-items: center;
   width: 100%;
-}
-
-.navigationBar {
   justify-content: space-around;
   height: 30px;
 }
 
 .summaryBar {
+  display: flex;
+  align-items: center;
+  width: 100%;
   justify-content: space-between;
   height: 20px;
+  margin-top: 10px;
   margin-bottom: 3px;
 }
 
@@ -174,16 +205,22 @@ hr {
   height: 20px;
 }
 
+.summary img {
+  cursor: pointer;
+}
+
 .bookmark {
   padding-right: 25px;
   display: flex;
   justify-content: right;
   height: 20px;
+  cursor: pointer;
 }
 
 .summary img,
 .bookmark img {
   height: 20px;
+  width: 20px;
   margin-left: 5px;
 }
 
@@ -206,10 +243,10 @@ hr {
 .commentContainer {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: left;
   align-content: center;
   width: 90%;
-  height: 150px;
+  height: 100px;
   overflow-y: scroll;
 }
 
@@ -219,22 +256,30 @@ hr {
   align-items: center;
   width: 90%;
   height: 30px;
+  margin-top: 5px;
+  margin-bottom: 5px;
   border-radius: 15px;
 }
 
 .comment img {
   height: 30px;
+  width: 30px;
   border-radius: 15px;
-  background-color: #f9a1a1;
 }
 
-.comment p {
+.clickable{
+  cursor: pointer;
+}
+
+.comment span {
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
+  width: 80%;
   height: 30px;
+  margin-left: 3px;
   border-radius: 15px;
-  background-color: #f9a1a1;
+  border: 2px solid black;
 }
 </style>

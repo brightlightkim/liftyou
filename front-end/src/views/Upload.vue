@@ -1,18 +1,15 @@
 <template>
   <div class="Upload">
-    <h1>Share Your Experience to Lift Others!</h1>
-    <div class="heading">
-      <div class="circle">1</div>
-      <h2>Add Your Experience</h2>
-    </div>
     <div class="add">
       <div class="form">
         <input v-model="title" placeholder="Title" />
         <p></p>
         <textarea v-model="description" placeholder="Description" />
         <p></p>
-        <input type="file" name="photo" @change="fileChanged" />
-        <button @click="upload">Upload</button>
+        <div class="buttonHolder">
+          <input type="file" name="photo" @change="fileChanged" />
+          <button @click="upload">Upload</button>
+        </div>
       </div>
       <div class="upload" v-if="addItem">
         <h2>{{ addItem.title }}</h2>
@@ -20,7 +17,7 @@
         <img :src="addItem.path" />
       </div>
     </div>
-    <div class="heading">
+    <!-- <div class="heading">
       <div class="circle">2</div>
       <h2>Edit/Delete Your Experience</h2>
     </div>
@@ -46,8 +43,8 @@
       <div class="actions" v-if="findItem">
         <button @click="deleteItem(findItem)">Delete</button>
         <button @click="editItem(findItem)">Edit</button>
-      </div>
-    </div>
+      </div> 
+    </div>-->
   </div>
 </template>
 
@@ -136,21 +133,46 @@ export default {
 </script>
 
 <style scoped>
+.Upload {
+  margin-top: 50px;
+  width: 70%;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  padding: 10px;
+  background-color: white;
+}
+
+.add {
+  width: 90%;
+}
 
 input {
   width: 100%;
+  border: none;
 }
 
 input:focus {
-  border: 3px solid #555;
+  outline: none;
 }
 
 textarea {
   width: 100%;
+  border: none;
+  height: 350px;
 }
 
 textarea:focus {
-  border: 3px solid #555;
+  outline: none;
+}
+
+.buttonHolder{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .image h2 {
@@ -195,6 +217,7 @@ button {
 
 .form {
   margin-right: 50px;
+  width: 100%;
 }
 
 /* Uploaded images */
