@@ -27,19 +27,7 @@
           <div class="commentContainer">
             <div class="comment">
               <img src="../../public/images/person.png" alt="">
-              <span>Hi</span>
-              <img class="clickable" src="../../public/images/like.png" alt="">
-              <h4>1</h4>
-            </div>
-            <div class="comment">
-              <img src="../../public/images/person.png" alt="">
-              <span>Hi</span>
-              <img class="clickable" src="../../public/images/like.png" alt="">
-              <h4>1</h4>
-            </div>
-            <div class="comment">
-              <img src="../../public/images/person.png" alt="">
-              <span>Hi</span>
+              <span>That's pretty cool</span>
               <img class="clickable" src="../../public/images/like.png" alt="">
               <h4>1</h4>
             </div>
