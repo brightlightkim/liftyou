@@ -18,41 +18,12 @@
           </div>
         </div>
         <div v-else class="text">
-          <div class="spaceBetween">
+          
             <div class="left">{{ item.title }}</div>
-            <button class="right" @click="changeEditMode()">Edit</button>
-          </div>
+          
 
           <p>{{ item.description }}</p>
-          <div class="commentContainer">
-            <div class="comment">
-              <img src="../../public/images/person.png" alt="">
-              <span>That's pretty cool</span>
-              <img class="clickable" src="../../public/images/like.png" alt="">
-              <h4>1</h4>
-            </div>
-          </div>
-          <div class="summaryBar">
-            <div class="summary">
-              <img src="../../public/images/like.png" alt />
-              <img src="../../public/images/comment.png" alt />
-              <img src="../../public/images/share.png" alt />
-            </div>
-            <div class="bookmark">
-              <img src="../../public/images/bookmark_not_selected.png" alt />
-            </div>
-          </div>
-          <div class="navigationBar">
-            <div class="upliftButton">Uplift</div>
-            <div class="commentButton">Comment</div>
-            <div class="shareButton">Share</div>
-          </div>
-          <div class="commentHolder">
-            <div class="inputHolder">
-              <input type="text" placeholder="comment to uplift" />
-            </div>
-            <div class="submitButton">Submit</div>
-          </div>
+          
         </div>
       </div>
     </section>
@@ -210,6 +181,7 @@ input:focus {
   align-items: center;
   background-color: white;
   width: 100%;
+  height:max-content;
   margin-top: 2em;
   border-radius: 20px;
 }
