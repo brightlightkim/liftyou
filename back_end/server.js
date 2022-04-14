@@ -28,6 +28,12 @@ const itemSchema = new mongoose.Schema({
   title: String,
   description: String,
   path: String,
+  like: Number,
+  commentBox: {
+    comments: [{type: String}],
+    commentLike: Number,
+    share: Number
+  }
 });
 
 const Item = mongoose.model('Item', itemSchema);
@@ -60,6 +66,12 @@ app.post('/api/items', async (req, res) => {
     title: req.body.title,
     description: req.body.description,
     path: req.body.path,
+    like: req.body.like,
+    commentBox: {
+      comments: req.body.comments,
+      commentLike: req.body.commentLike,
+      share: req.body.share
+    }
   });
   try {
     await item.save();

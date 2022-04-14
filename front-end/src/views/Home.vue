@@ -3,8 +3,26 @@
     <section class="image-gallery">
       <div class="image" v-for="item in items" :key="item.id">
         <img :src="item.path" />
-        <div class="text">
-          <h3>{{ item.title }}</h3>
+        <div v-if="editMode" class="text">
+          <div class="spaceBetween">
+            <div class="left">{{ findItem.title }}</div>
+            <div class="right" @click="editItem(findItem)">Finish</div>
+          </div>
+          <input v-model="findTitle" placeholder="Title" />
+          <p></p>
+          <textarea v-model="findDescription" placeholder="Description" />
+          <p></p>
+          <div class="buttonHolder">
+            <input type="file" name="photo" @change="fileChanged" />
+            <button @click="editItem(findItem)">Upload</button>
+          </div>
+        </div>
+        <div v-else class="text">
+          <div class="spaceBetween">
+            <div class="left">{{ item.title }}</div>
+            <button class="right" @click="changeEditMode()">Edit</button>
+          </div>
+
           <p>{{ item.description }}</p>
           <div class="commentContainer">
             <div class="comment">
@@ -60,7 +78,21 @@ export default {
   name: 'Home',
   data() {
     return {
+      editMode: false,
+      title: "",
+      description: "",
+      file: null,
+      comments: [],
+      addItem: null,
       items: [],
+      findTitle: "",
+      findDescription: "",
+      findItem: null,
+      findItemComments: {
+        comments: [],
+        commentLike: 0,
+        share: 0,
+      }
     }
   },
   created() {
@@ -76,6 +108,22 @@ export default {
         console.log(error);
       }
     },
+    async editItem(item) {
+      try {
+        await axios.put("/api/items/" + item._id, {
+          title: this.findItem.title,
+          description: this.findItem.description
+        });
+        this.findItem = null;
+        this.getItems();
+        return true;
+      } catch (error) {
+        console.log(error);
+      }
+    },
+    changeEditMode() {
+      if (this.editMode == false) { this.editMode = true; }
+    }
   },
 }
 </script>
@@ -85,6 +133,33 @@ export default {
 *:before,
 *:after {
   box-sizing: inherit;
+}
+
+.right {
+  display: flex;
+  justify-content: right;
+  align-content: center;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.right:hover {
+  color: darkslategray;
+  cursor: pointer;
+}
+
+.left {
+  display: flex;
+  justify-content: left;
+  align-content: center;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.spaceBetween {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
 }
 
 .image-gallery {
@@ -267,7 +342,7 @@ input:focus {
   border-radius: 15px;
 }
 
-.clickable{
+.clickable {
   cursor: pointer;
 }
 
