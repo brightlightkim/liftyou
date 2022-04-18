@@ -18,12 +18,8 @@
           </div>
         </div>
         <div v-else class="text">
-          
-            <div class="left">{{ item.title }}</div>
-          
-
+          <div class="left">{{ item.title }}</div>
           <p>{{ item.description }}</p>
-          
         </div>
       </div>
     </section>
@@ -181,7 +177,7 @@ input:focus {
   align-items: center;
   background-color: white;
   width: 100%;
-  height:max-content;
+  height: max-content;
   margin-top: 2em;
   border-radius: 20px;
 }
