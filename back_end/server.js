@@ -19,7 +19,7 @@ const { stringify } = require('querystring');
 const upload = multer({
   dest: '../front-end/public/images/',
   limits: {
-    fileSize: 10000000
+    fileSize: 100000000
   }
 });
 
@@ -48,8 +48,6 @@ app.get('/api/items', async (req, res) => {
   }
 });
 
-// Upload a photo. Uses the multer middleware for the upload and then returns
-// the path where the photo is stored in the file system.
 app.post('/api/photos', upload.single('photo'), async (req, res) => {
   // Just a safety check
   if (!req.file) {
