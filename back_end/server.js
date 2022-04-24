@@ -48,16 +48,6 @@ app.get('/api/items', async (req, res) => {
   }
 });
 
-app.post('/api/photos', upload.single('photo'), async (req, res) => {
-  // Just a safety check
-  if (!req.file) {
-    return res.sendStatus(400);
-  }
-  res.send({
-    path: "/images/" + req.file.filename
-  });
-});
-
 // Create a new item in the museum: takes a title and a path to an image.
 app.post('/api/items', async (req, res) => {
   const item = new Item({
@@ -106,5 +96,15 @@ app.put('/api/items/:id', async (req, res) => {
     res.sendStatus(500);
   }
 })
+
+app.post('/api/photos', upload.single('photo'), async (req, res) => {
+  // Just a safety check
+  if (!req.file) {
+    return res.sendStatus(400);
+  }
+  res.send({
+    path: "/images/" + req.file.filename
+  });
+});
 
 app.listen(3000, () => console.log('Server listening on port 3000!'));

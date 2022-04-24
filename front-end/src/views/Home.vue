@@ -78,7 +78,7 @@ export default {
     },
     changeEditMode() {
       if (this.editMode == false) { this.editMode = true; }
-    }
+    },
   },
 }
 </script>
