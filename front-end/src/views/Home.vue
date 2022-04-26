@@ -20,6 +20,9 @@
         <div v-else class="text">
           <div class="left">{{ item.title }}</div>
           <p>{{ item.description }}</p>
+          <div class="text">
+            Text
+          </div>
         </div>
       </div>
     </section>
